@@ -38,6 +38,26 @@ Em um serviço orientado a conexão, há a necessidade de se estabelecer uma con
 Em um serviço nao oritentado a conexão, nao ha necessidade de conexao. 
 Servicos nao orientados a conexao costumam nao ser confiaveis, todavia sao mais rapidos, ja que nao necessitam de confirmacao para tramite de dados.  
 
+## 8. Qual a diferença entre a largura de banda do meio físico e a largura de banda do sinal? Se o primeiro for maior do que o segundo, é possível comportar mais de um tipo de sinal? Que tipo de estratégias é possível usar para viabilizar isso (mais de um sinal no mesmo meio físico)?
+
+ Largura do meio físico descreve a capacidade máxima que um meio suporta, ao passo que a largura de banda do sinal descreve qual é a dimensão da taxa de dados que um sinal carrega. 
+ Quando a largura de banda do meio físico é maior que a largura de banda de um sinal, é possível utilizar de técnicas de multiplexação para que seja transportado mais de um sinal em um mesmo meio fisico. O mais adequado para esse cenário é utilizar a tecnica FDM, que multiplexa de acordo com a frequencia do sinal. 
 
 
+## 9. Para que servem os modems?
 
+Equipamento utilizado para injetar dados no sistema de transmissão analógico. 
+
+## 10. Quais as diferenças entre modulação ASK, FSK e PSK? 
+
+ASK, FSK E PSK são técnicas utilizadas para transmissão de dados digitais em forma analógica. 
+ - ASK: Técnica baseada na amplitude do sinal. Basicamente, quando um sinal digital tem o valor 1, a onda analogica transmitida tem grandeza s(t) = A cos(2Pi.f1.t), quando o sinal digital possuir valor 0, entao s(t) = 0. 
+ - FSK: Técnica de modularização baseada na frequencia. Com ela, os sinais de bits são representados por frequências diferentes. Onde: 
+    - s(t) = A cos(2Pi.f1.t) -> Binário 1
+    - s(t) = A cos(2Pi.f2.t) -> Binário 0
+   essa técnica é menos sucetivel a ruidos do que a ASK, e é amplamente utilizado para transimssão em alta frequancia. 
+ - PSK: Tencnica de modularização em fase. Com ela, a fase é alterada no sinal da portadora para representar o sinal digital, onde 0 represente sinais continuos onde o proximo é igual ao anterior, e 1 é o sinal onde o a onda de sinal é respresentada pela fase oposta da onda anterior. A representação de cada onde pode ser dada por: 
+    - s(t) = A cos(2Pi.Fc.t + Pi ) -> 1
+    - s(t) = A cos(2Pi.Fc.t ) -> 0
+
+## 11. Qual a relação entre largura de banda e taxa de transmissão?
