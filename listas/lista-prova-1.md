@@ -61,3 +61,93 @@ ASK, FSK E PSK são técnicas utilizadas para transmissão de dados digitais em 
     - s(t) = A cos(2Pi.Fc.t ) -> 0
 
 ## 11. Qual a relação entre largura de banda e taxa de transmissão?
+
+Uma dada largura de banda pode suportar várias taxas de sinais, dependendo da quantidades de componentes do sinal e a frequencia pré estabelecida para o sinal. No geral, quanto maior a largura de  banda, maior a taxa de dados que um sinal transmite. 
+
+## 12. O que é elemento de sinal em transmissões? O que é baud? Como representar os bits em transmissões usando moedas? Como se consegue uma taxa de 28800 bps num modem?
+
+Um sinal possui 3 elementos. Amplitude, frequencia e fase. 
+Baud corresponde a quantidade de alterações que um sinal sofre no tempo.
+Para atingir uma taxa de 28800 bps, é necessário uma taxa de sinalização de 3200 bauds, para um sinal representado por nove bits. 
+
+## 13. Qual a diferença entre um multiplexador TDM e um multiplexador FDM?
+
+um multiplexador TDM divide uma largura de banda em relação ao tempo de uso entre sinais. Ao passo que FDM altera a frequencia de um dado sinal para poder compartilha-lo em um mesmo meio. 
+Para a tecnica de multiplexacao por FDM, 2 casos devem ser tratados: 
+    - Crosstalk: quando frequencias de sinais se sobrepoes 
+    - Ruido de intermodulacao: Quando as energias das frequencias diferentes se somam, gerando uma nova frequencia que pode ser a soma ou a diferenca das frequencias originais. 
+Para a tecnica de TDM, os principais problemas recorrentes são: 
+    - Mesmo que o sinal não tenha dados para transmitir, seu slot de tempo irá continuar esperando dados, o que pode gerar em disperdicio de banda. 
+
+## 14. Qual a diferença entre meio físico guiado e não guiado?
+
+ Meio fisico guiado: Meio fisicos de transmissão que fazem a utilização de fios de cobre ou ópticos. 
+ Para os fios de cobre, vale destacar cabo coaxial e cabo de par trançado. Para o meio optico o mais usado é a fibra óptica. 
+ Os meios não guiados não utilizam fios para progragação do sinal. São tres tipos: Radiofrequencia, infravermelho, e baseados em laser.
+
+ ## 15. Quais as taxas de transmissão e qual padrão de rede local fazem uso de cabo coaxial?
+
+ O cabo coaxial caiu em desuso em diversos casos, sendo substituido pelo cabo de par trançado. Todavia, seu uso ainda continua em sistema de TV a cabo. Sendo sua taxa de transmissão chegando a 10mbps.
+
+ ## 16. Explique qual a diferença entre uma rede local com cabeamento estruturado e uma rede sem esse tipo de cabeamento. Qual a importância dessa estratégia na montagem de redes locais? 
+
+ Cabeamento estruturado é um sistema composto por cabos, conetores, condutas e dispositivos que permitem a conectividade de rede à uma rede de telecomunicacoes em um edificio. 
+ Toda a estrutura deve seguir a norma  NBR-14565. Seu uso é extremamente importante para que seja construido sistema de redes eficientes para edificios. 
+
+ ## 17. Faça um quadro comparativo sobre os cabos par trançado usados em redes locais e telefonia, com destaque para os cabos e conectores categorias 1, 3, 5, 6 (comentar taxa de transmissão, tipo de redes em que são usados, largura de banda, tipo de transmissão mais apropriada, etc.)
+
+Categoria 1:
+    - Taxa de transmissao: 
+    - Tipos de redes:
+    - largura de banda:
+    - tipo de transmissao:
+
+Categoria 3:
+    - Taxa de transmissao: 
+    - Tipos de redes:
+    - largura de banda:
+    - tipo de transmissao:
+
+Categoria 5:
+    - Taxa de transmissao: 
+    - Tipos de redes:
+    - largura de banda:
+    - tipo de transmissao:
+
+Categoria 6:
+    - Taxa de transmissao: 
+    - Tipos de redes:
+    - largura de banda:
+    - tipo de transmissao:
+
+
+## 18. Qual a diferença entre fibras monomodo e multimodo?
+
+monomodo:
+    - Nucleo com grande diametro que permite a passagem de diversos modos de luz (Mais tipos de dados podem ser transmitidos)
+    - Distancia maxima menor
+    - melhor para aplicacoes locais
+multimodo: 
+    - Possui apenas um modo de propagação. Um unico comprimento de de onde de luz o nucleo da fibra. 
+    - Quase sempre na cor amarela
+    - Distancia maxima sem perder sinal de 40km
+    - Melhor para aplicacoes de longa distancia
+
+## 19. Explique, em linhas gerais, como funciona o protocolo RS-232
+
+Protocolo que envia bit a bit. Geralmente, para uma comunicação bi direcional, há dois fios Rx e Tx. 
+
+## 20. Explique as diferenças entre redes de comutação de circuito e comutação de pacotes.
+
+Comutação de circuitos: 
+    - Dados são transferidos com um caminho dedicado de ponta a ponta (Uma vez que a conexão é estabelecida)
+    - Dominante no sistema de telefonia
+    - Orientado a conexão. 
+
+Comutação de pacotes: 
+    -   Divide o sinal a ser transmitido em pacodes, que são transportados na rede e redirecionados por um roteador.    
+    - Usado em transmissao de dados
+    - Pacotes bufferizados e entao passados para o proximo nó(roteador) que analisa o melhor caminho para repassar a informacao. 
+    - Mais eficiente e permite a transimissao dados de diferentes fontes por um mesmo meio
+
+## 21. Explique como funcionam os CODECs
