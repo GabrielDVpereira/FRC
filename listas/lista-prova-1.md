@@ -151,3 +151,6 @@ Comutação de pacotes:
     - Mais eficiente e permite a transimissao dados de diferentes fontes por um mesmo meio
 
 ## 21. Explique como funcionam os CODECs
+
+Codecs são dispositivos que converte dados analogicos em dado digital para sua transmissão, e consequentimente recupera tais dados analogicos em seu formato digital. 
+O uso do Codec, por exemplo, na conversão do sinal de voz em dados de transmissao em rede de telefonia.
