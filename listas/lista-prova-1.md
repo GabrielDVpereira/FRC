@@ -154,3 +154,118 @@ Comutação de pacotes:
 
 Codecs são dispositivos que converte dados analogicos em dado digital para sua transmissão, e consequentimente recupera tais dados analogicos em seu formato digital. 
 O uso do Codec, por exemplo, na conversão do sinal de voz em dados de transmissao em rede de telefonia.
+
+## 22. Explique a técnica PCM e a técnica PAM (Pulse Amplitude Modulation) usada para conversão de fontes analógicas em informações digitais.
+
+PAM (Pulse Amplitude Modulation): Metodo de transmissao de um sinal analogico com pulsos espaçados igualmente. 
+PCM (Pulse Code Modulation): Codifica a amplitude de sinais amostrados em dados binarios de comprimento N, que produzem valores quantizados possiveis 2N.
+
+## 23. Quais as funcionalidades da camada de enlace de dados?
+
+As principais funcionalidades da camada de enlace são: 
+ - Controle de erros
+ - Controle de fluxo de dados
+ - fornecer uma interface de servico bem definida para a camada de redes. 
+
+ ## 24. Porque é preciso enquadrar os bits na camada de enlace de dados? Que técnicas são usadas para enquadramento?
+
+ O enquadramento facilita a verificação de erros de transmissão. 
+ Alguns metodos foram adotados para enquadramento de bits: 
+  - Temporização: Marcar o tempo do inicio e do fim de um quadro de bits. É uma tecnica pouco eficaz
+  - Contagem de caracteres: utilzacao de um campo no header para contagem de caracteres no quadro. Contagem pode ser adulterada por um erro de transmissao. 
+  - Bytes de flags, com insercao de bytes: Cada quadro inicia-se e termina com bytes especiais. Há problemas com esse metodo com transmissao de dados de pontos flutuantes. Essa tecnica depende do enquadramento de catecteres de 8 bits. 
+  - Flags iniciais e finais, com insercao de bytes: flags de 0111110 sao inseridos no inicio e no final do quadro. Se, por ventura, os dados transmitidos possuirem a sequencia de flags, é inserido um bit 0 para sua transimissao e esse bit é removido em seu receptor. 
+  - Violacao de codificacao da camada fisica: Aplicacao em redes em que o meio possui algum tipo de redundancia. 
+
+
+## 25. Quais os mecanismos de controle de erros mais comuns em uso? 
+
+Um mecanismo de controle de erro inclui a adicao de feedbacks no transmissor e receptor de dados. O transmissor espera uma resposta do recepetor, sendo essa positiva se os dados recebidos foram recebidos com sucesso ou negativa se tais dados foram recebidos com erro. Nesse caso, o tranmissor irá retransmitir o dados. Em caso de perda de quadros, no qual o receptor não reagirá, o transmissor possui um timer para espera de resposta do transmissor, caso nao haja resposta, o mesmo retransmite o dado. 
+A fim de evitar que quadros sejam enviados repetidamente, e sem necessidade, é atribuido numeros aos quadros, de forma que o transmissor sabe qual o quadro certo deve enviar
+
+## 26. Explique o que é distância de Hamming em sistemas de transmissão.
+
+Dados sinais de dados transmitdos, distancia de Hamming corresponde a quantos bits diferentes há entre eles. 
+
+## 27. Explique como funciona a técnica de CRC e paridade longitudinal, para correção de erros.
+
+- técnica de CRC: metodo polinomial a qual um quadro é transformado em um polinomio e entao tal polinomio é dividido por um valor gerador. O valor da divisao é colocado ao fim da mensagem. Dessa forma, o receptor 
+- paridade longitudinal: ao fim de cada quadro, um bit de paridade é adicionado, de forma que se a quantidade total de bits for par, 0 é adicionado ao final, se não, 1 é adicionado ao final.
+
+## 28. Explique como funciona o protocolo stop-and-wait.
+
+Nesse protocolo, o transissor envia o dado e espera a confirmação do remetente para que os proximos dados sejam enviados. 
+
+## 29. O que é o conceito de piggybacking usando em protocolos de enlace ponto-a-ponto? Como ele é implementado?
+
+Ao inves do envio de quadros de reconhecimento, o piggibacking corresponde em inserir na mensagem de quadro de resposta do receptor, o resultado se o quadro transmitido anteriormente foi bem sucedido. Quando não há dados para serem transmitidos, somente o quadro de reconhecimento é enviado. 
+
+## 30. Qual a relação entre o número de bits usados para numerar os quadros e o tamanho da janela de transmissão?
+
+A janela de transmissão definida irá dizer quantos bits serão enviados em uma janela, quanto maior a  janela, mais bits pode ser enviados sem a confirmação de integridade. 
+
+## 31. Qual a diferença entre os mecanismos de retransmissão seletiva e go-back-N?
+
+- Retransmissao seletiva: 
+    - Mantem em buffer pacotes que foram recebidos fora de ordem. 
+    - Retransmite somente os pacotes defeituosos de uma janela e nao a janela completa
+- Go-Back-N:
+    - Permite o envio de um determinado numero de pacotes sem que os anteriores tenham sido reconhecidos. 
+    - um erro em um unico pacote faz com o que todos os pacotes de uma janela sejam reenviados
+
+## 32. Qual a diferença entre janela de transmissão e janela de recepção nos protocolos de janela deslizante?
+
+Janela de tramissao: Quantidade de quadros que podem ser transmitidos independente de sua confirmação. 
+Janela de recepcao: Conjunto de quadros recebidos que ainda nao foram passados para a camada superior. 
+
+## 33. Considere um protocolo de transmissão ponto-a-ponto (enlace de dados), com janela de transmissão igual a 5 entre dois hosts. Suponha que, ao transmitir, o quadro 2 se perde. Como esse protocolo se comporta para restabelecer esse quadro, considerando o mecanismo goback-N? E se fosse retransmissão seletiva?
+
+Para o mecanismo de go-back-n, todo o quadro seria reenviado. Para a retransmissao seletiva, os quadros perdidos seriam identificados e somete eles seriam reenviados. 
+
+## 34. Explique quais foram as mudanças efetuadas no Ethernet a (10Mbps) para criação do FastEthernet (100Mbps) e de outras variações de mais alta velocidade.
+
+Para a adoção da fastEthernet, o tempo do quadro foi reduzido de 100nsec para 10nsec. Com uso de Switches, hubs que se baseam no uso de cabos de par trancado. 
+
+## 35. Explique as diferenças entre o mecanismos de acesso ao meio utilizados em redes Wi-Fi e em redes cabeadas… Porque o mecanismo definido é diferente nesses dois tipos de tecnologias?
+
+redes de wifi utilizam meios de tranmissao não guiados, enquanto redes cabeadas utilizam cabos que os caracterizam, como guiados. 
+
+## 36. Mostre o quadro Ethernet/IEEE802.3, explicando cada um dos seus campos. Porque um quadro precisa ter um tamanho mínimo? Porque precisa ter um tamanho máximo?
+
+Ethernet 
+Preambulo
+    - 8 bytes 
+    - sincronizacao de envio
+Endereco destino
+    - 6 bytes
+    - endereco do destinatario
+Endereco de origem 
+    - 6 bytes
+    - endereco de origem do quadro
+tipo
+    - 2 bytes
+cabecalho e dados
+    - 46 a 1500 bytes
+pad
+    - 0 a 46 
+    - comleta os dados
+checksum
+    - 4 bytes
+    - verificacao de quadro
+
+para o padrao 802.3, para cada quadro é transmitido 1500 bytes de informacao. 
+
+
+## 44. Mostre o formato de um quadro típico de uma rede IEEE802.11, explicando a funcionalidade de seus campos.
+
+
+n + 1 oc 
+n noc 
+n - 1 oc
+
+
+
+
+
+
+
