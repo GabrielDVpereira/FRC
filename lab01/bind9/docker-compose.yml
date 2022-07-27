@@ -1,0 +1,39 @@
+# docker-compose up -d
+version: '3.5'
+
+services:
+  container1:
+    restart: always
+    image: labbsr0x/dns-bind9
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    volumes:
+      - ./primary:/data
+    hostname: container1
+    networks:
+      local_net:
+        ipv4_address: 192.168.10.1
+        aliases:
+          - container1
+
+  container2:
+    restart: always
+    image: labbsr0x/dns-bind9
+    ports:
+      - "54:54/udp"
+      - "54:54/tcp"
+    volumes:
+      - ./primary:/data
+    hostname: container2
+    networks:
+      local_net:
+        ipv4_address: 192.168.10.2
+        aliases:
+          - container2
+          
+networks:
+  local_net:
+    ipam:
+      config:
+        - subnet: 192.168.10.0/16

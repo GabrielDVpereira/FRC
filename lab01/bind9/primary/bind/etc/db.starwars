@@ -1,0 +1,17 @@
+# Cada definição de master deve se iniciar com uma entrada SOA
+# Ela indica o servidor de nomes para o domínio em questão e parâmetros de operação
+@ IN SOA vader.starwars.unb.br. root.vader.starwars.unb.br. (
+2022092601 ;numero serial - deve ser incrementado a cada mudança neste arquivo
+21600 ;refresh - das informações para slaves
+1800 ;retry – tempo entre as tentativas
+604800 ;expire - tempo para se desistir de contactar master
+86400 ) ;mínimo - tempo a manter a informação no cache (TTL)
+IN NS vader.starwars.unb.br.
+starwars.unb.br. IN MX 10 R2D2.starwars.unb.br ;entrada MX (mail server)
+localhost IN A 127.0.0.1
+yoda IN A 192.168.10.1
+obiwan IN A 192.168.10.2
+leia IN A 192.168.10.3
+luke IN A 192.168.10.4
+vader IN A 192.168.10.66
+R2D2 IN A 192.168.10.100

@@ -1,0 +1,15 @@
+# Realiza a resolução reversa
+# O tipo PTR significa um alias para o endereço IP
+@ IN SOA vader.starwars.unb.br. root.vader.starwars.unb.br. (
+2022092601
+21600
+1800
+604800
+86400 )
+IN NS vader.starwars.unb.br.
+1 IN PTR yoda.starwars.unb.br
+2 IN PTR obiwan.starwars.unb.br
+3 IN PTR leia.starwars.unb.br
+4 IN PTR luke.starwars.unb.br
+66 IN PTR vader.starwars.unb.br
+100 IN PTR R2D2.starwars.unb.br

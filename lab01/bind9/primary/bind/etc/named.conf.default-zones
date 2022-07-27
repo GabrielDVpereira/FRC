@@ -1,0 +1,12 @@
+# Cada zona é declarada como abaixo. os tipos são:
+# primary-master: contém um cópia master dos dados da zona
+# secondary-slave: replicas de uma master
+# hint: aponta para os servidores root
+# A opção “file” indica qual é o arquivo que contém os dados
+# da zona “starwars” da classe IN (Internet)
+
+zone "starwars.unb.br" in {
+	type master;
+	file "/etc/bind/db.starwars";
+};
+
