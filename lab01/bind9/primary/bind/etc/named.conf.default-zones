@@ -5,8 +5,8 @@
 # A opção “file” indica qual é o arquivo que contém os dados
 # da zona “starwars” da classe IN (Internet)
 
-zone "starwars.unb.br" in {
+zone "gabrieldavi.com" in {
 	type master;
-	file "/etc/bind/db.starwars";
+	file "/etc/bind/db.gabrieldavi.com";
 };
 
